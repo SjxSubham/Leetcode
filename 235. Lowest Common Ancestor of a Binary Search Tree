@@ -1,3 +1,4 @@
+// Same as Lca of a Binary tree
 if(!root)return NULL;
 
         //Base Case
