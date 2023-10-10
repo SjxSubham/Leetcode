@@ -7,7 +7,7 @@
     //            count += nums[i+1] - nums[i] -1;
     //        }
            
-    //    }
+    //   }
 
  int  s = nums.size()-1; //max size of sliding window is the target gap between min and max elements
     sort(nums.begin(), nums.end()); //sorting o(n log n) time so that we can remove duplicates over the array
