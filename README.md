@@ -8,8 +8,8 @@ Here is the answers of **LeetCode questions** that i have done in my carrier thr
 <details><summary> <b align="center"> Leetcode Info</b></summary>
 <div align="center">
   
-    
-  <img  align=top flex-grow=1 style="margin-right: 50px" href="https://www.leetcode.com/sjx_subham" src="https://leetcard.jacoblin.cool/Sjx_Subham?theme=dark&font=Arial&ext=heatmap" />  
+<a href="https://www.leetcode.com/sjx_subham" target="blank">
+  <img  align=top flex-grow=1 style="margin-right: 50px" src="https://leetcard.jacoblin.cool/Sjx_Subham?theme=dark&font=Arial&ext=heatmap" />  
      
 </div>
    </dd>
