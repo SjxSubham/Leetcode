@@ -1,0 +1,39 @@
+// 731. My Calendar II
+// https://leetcode.com/problems/my-calendar-ii/description/
+
+import java.util.TreeMap;
+
+class MyCalendarTwo {
+    private TreeMap<Integer, Integer> delta;
+
+    public MyCalendarTwo() {
+        delta = new TreeMap<>(); // Tracks the start and end points of intervals
+    }
+    
+    public boolean book(int start, int end) {
+        // Mark the start and end points of the new interval
+        delta.put(start, delta.getOrDefault(start, 0) + 1);
+        delta.put(end, delta.getOrDefault(end, 0) - 1);
+        
+        int active = 0; // Tracks the number of active overlaps
+        for (int d : delta.values()) {
+            active += d; // Update active count based on delta values
+            if (active >= 3) { // Triple booking detected
+                // Revert the changes if a triple booking is found
+                delta.put(start, delta.get(start) - 1);
+                delta.put(end, delta.get(end) + 1);
+                if (delta.get(start) == 0) delta.remove(start); // Remove if zero count
+                if (delta.get(end) == 0) delta.remove(end);     // Remove if zero count
+                return false; // Booking is not allowed
+            }
+        }
+        
+        return true; // Booking is allowed
+    }
+}
+
+/**
+ * Your MyCalendarTwo object will be instantiated and called as such:
+ * MyCalendarTwo obj = new MyCalendarTwo();
+ * boolean param_1 = obj.book(start,end);
+ */
