@@ -6,7 +6,7 @@
 ###### pure C++
 <dl>
     <dd>
-<details><summary> <b align="center"> Leetcode Info</b></summary>
+<details><summary> <b align="center">My Leetcode Info</b></summary>
     <P>
 <div align="center">
   
