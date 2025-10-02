@@ -1,138 +1,138 @@
-// Brute Force
-// This will give you TLE
-// Time Complexity: O(n^2)
-// Space Complexity: O(1)
-// #include <bits/stdc++.h>
-// using namespace std;
+Brute Force
+This will give you TLE
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+#include <bits/stdc++.h>
+using namespace std;
 
-// class Solution {
-// public:
-//     int maxSubArray(vector<int>& nums) {
-//         int n = nums.size();
-//         int maxSum = INT_MIN;
-//         for (int i = 0; i < n; i++) {
-//             int currSum = 0;
-//             for (int j = i; j < n; j++) {
-//                 currSum += nums[j];
-//                 maxSum = max(maxSum, currSum);
-//             }
-//         }
-//         return maxSum;
-//     }
-// };
-
-
-// Prefix Sum
-// This will give you TLE also
-// Time Complexity: O(n^2)
-// Space Complexity: O(n)
-// #include <bits/stdc++.h>
-// using namespace std;
-
-// class Solution {
-// public:
-//     int maxSubArray(vector<int>& nums) {
-//         int n = nums.size();
-//         vector<int> prefix(n+1, 0);
-//         for (int i = 0; i < n; i++) {
-//             prefix[i+1] = prefix[i] + nums[i];
-//         }
-//         int maxSum = INT_MIN;
-//         for (int i = 0; i < n; i++) {
-//             for (int j = i; j < n; j++) {
-//                 int sum = prefix[j+1] - prefix[i];
-//                 maxSum = max(maxSum, sum);
-//             }
-//         }
-//         return maxSum;
-//     }
-// };
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int n = nums.size();
+        int maxSum = INT_MIN;
+        for (int i = 0; i < n; i++) {
+            int currSum = 0;
+            for (int j = i; j < n; j++) {
+                currSum += nums[j];
+                maxSum = max(maxSum, currSum);
+            }
+        }
+        return maxSum;
+    }
+};
 
 
-// Divide & Conquer
-// This Works
-// Time Complexity: O(n log n)
-// Space Complexity: O(log n) recursion stack
-// #include <bits/stdc++.h>
-// using namespace std;
+Prefix Sum
+This will give you TLE also
+Time Complexity: O(n^2)
+Space Complexity: O(n)
+#include <bits/stdc++.h>
+using namespace std;
 
-// class Solution {
-// public:
-//     int maxCrossingSum(vector<int>& nums, int l, int m, int r) {
-//         int leftSum = INT_MIN, rightSum = INT_MIN, sum = 0;
-//         for (int i = m; i >= l; i--) {
-//             sum += nums[i];
-//             leftSum = max(leftSum, sum);
-//         }
-//         sum = 0;
-//         for (int i = m+1; i <= r; i++) {
-//             sum += nums[i];
-//             rightSum = max(rightSum, sum);
-//         }
-//         return leftSum + rightSum;
-//     }
-
-//     int maxSubArrayHelper(vector<int>& nums, int l, int r) {
-//         if (l == r) return nums[l];
-//         int m = (l + r) / 2;
-//         return max({maxSubArrayHelper(nums, l, m),
-//                     maxSubArrayHelper(nums, m+1, r),
-//                     maxCrossingSum(nums, l, m, r)});
-//     }
-
-//     int maxSubArray(vector<int>& nums) {
-//         return maxSubArrayHelper(nums, 0, nums.size()-1);
-//     }
-// };
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> prefix(n+1, 0);
+        for (int i = 0; i < n; i++) {
+            prefix[i+1] = prefix[i] + nums[i];
+        }
+        int maxSum = INT_MIN;
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                int sum = prefix[j+1] - prefix[i];
+                maxSum = max(maxSum, sum);
+            }
+        }
+        return maxSum;
+    }
+};
 
 
-// Dynamic Programming
-// This Works Too
-// Time Complexity: O(n)
-// Space Complexity: O(n)
-// #include <bits/stdc++.h>
-// using namespace std;
+Divide & Conquer
+This Works
+Time Complexity: O(n log n)
+Space Complexity: O(log n) recursion stack
+#include <bits/stdc++.h>
+using namespace std;
 
-// class Solution {
-// public:
-//     int maxSubArray(vector<int>& nums) {
-//         int n = nums.size();
-//         vector<int> dp(n);
-//         dp[0] = nums[0];
-//         int maxSum = dp[0];
-//         for (int i = 1; i < n; i++) {
-//             dp[i] = max(nums[i], dp[i-1] + nums[i]);
-//             maxSum = max(maxSum, dp[i]);
-//         }
-//         return maxSum;
-//     }
-// };
+class Solution {
+public:
+    int maxCrossingSum(vector<int>& nums, int l, int m, int r) {
+        int leftSum = INT_MIN, rightSum = INT_MIN, sum = 0;
+        for (int i = m; i >= l; i--) {
+            sum += nums[i];
+            leftSum = max(leftSum, sum);
+        }
+        sum = 0;
+        for (int i = m+1; i <= r; i++) {
+            sum += nums[i];
+            rightSum = max(rightSum, sum);
+        }
+        return leftSum + rightSum;
+    }
 
+    int maxSubArrayHelper(vector<int>& nums, int l, int r) {
+        if (l == r) return nums[l];
+        int m = (l + r) / 2;
+        return max({maxSubArrayHelper(nums, l, m),
+                    maxSubArrayHelper(nums, m+1, r),
+                    maxCrossingSum(nums, l, m, r)});
+    }
 
-// Kadane’s Algorithm
-// This Will Works Too
-// Time Complexity: O(n)
-// Space Complexity: O(1)
-// #include <bits/stdc++.h>
-// using namespace std;
-
-// class Solution {
-// public:
-//     int maxSubArray(vector<int>& nums) {
-//         int maxSum = nums[0], currSum = nums[0];
-//         for (int i = 1; i < nums.size(); i++) {
-//             currSum = max(nums[i], currSum + nums[i]);
-//             maxSum = max(maxSum, currSum);
-//         }
-//         return maxSum;
-//     }
-// };
+    int maxSubArray(vector<int>& nums) {
+        return maxSubArrayHelper(nums, 0, nums.size()-1);
+    }
+};
 
 
-// Segment Tree
-// This Works too
-// Time Complexity: O(n) build + O(1) query for maxSubArray
-// Space Complexity: O(n) for segment tree
+Dynamic Programming
+This Works Too
+Time Complexity: O(n)
+Space Complexity: O(n)
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> dp(n);
+        dp[0] = nums[0];
+        int maxSum = dp[0];
+        for (int i = 1; i < n; i++) {
+            dp[i] = max(nums[i], dp[i-1] + nums[i]);
+            maxSum = max(maxSum, dp[i]);
+        }
+        return maxSum;
+    }
+};
+
+
+Kadane’s Algorithm
+This Will Works Too
+Time Complexity: O(n)
+Space Complexity: O(1)
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int maxSum = nums[0], currSum = nums[0];
+        for (int i = 1; i < nums.size(); i++) {
+            currSum = max(nums[i], currSum + nums[i]);
+            maxSum = max(maxSum, currSum);
+        }
+        return maxSum;
+    }
+};
+
+
+Segment Tree
+This Works too
+Time Complexity: O(n) build + O(1) query for maxSubArray
+Space Complexity: O(n) for segment tree
 #include <bits/stdc++.h>
 using namespace std;
 
