@@ -1,11 +1,4 @@
 
-// *********** INTUITOIN *************
-
-// If we have counts of each fruit, we can decide the optimal arrangement based on frequency or positioning rules.
-// The problem is likely solved by iteratively placing fruits in the desired order while keeping track of remaining counts.
-// Special cases to consider: all same type, two types only, or odd/even total fruits.
-
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -35,5 +28,4 @@ public:
         return result;
     }
 };
-
 
