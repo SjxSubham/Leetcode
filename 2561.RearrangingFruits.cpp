@@ -1,10 +1,3 @@
-// *********** APPROACH *************
-
-// Analyze the input (probably a list or string representing fruits).
-// Determine the goal: rearranging fruits to satisfy a condition (like sorting, grouping, or alternating types).
-// Identify constraints: minimize swaps, moves, or cost if mentioned.
-// Use an efficient method to achieve the arrangement: could be greedy, two-pointers, counting/frequency array, or sorting.
-
 
 // *********** INTUITOIN *************
 
@@ -43,12 +36,4 @@ public:
     }
 };
 
-int main() {
-    Solution sol;
-    vector<int> fruits = {1,1,2,2,3,3}; // sample input
-    vector<int> rearranged = sol.rearrangeFruits(fruits);
 
-    for (int f : rearranged) cout << f << " ";
-    cout << endl;
-    return 0;
-}
