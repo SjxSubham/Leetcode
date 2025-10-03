@@ -1,7 +1,7 @@
-Brute Force
-This will give you TLE
-Time Complexity: O(n^2)
-Space Complexity: O(1)
+//Brute Force
+//This will give you TLE
+//Time Complexity: O(n^2)
+//Space Complexity: O(1)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -22,10 +22,10 @@ public:
 };
 
 
-Prefix Sum
-This will give you TLE also
-Time Complexity: O(n^2)
-Space Complexity: O(n)
+//Prefix Sum
+//This will give you TLE also
+//Time Complexity: O(n^2)
+//Space Complexity: O(n)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -49,10 +49,10 @@ public:
 };
 
 
-Divide & Conquer
-This Works
-Time Complexity: O(n log n)
-Space Complexity: O(log n) recursion stack
+//Divide & Conquer
+//This Works
+//Time Complexity: O(n log n)
+//Space Complexity: O(log n) recursion stack
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -86,10 +86,10 @@ public:
 };
 
 
-Dynamic Programming
-This Works Too
-Time Complexity: O(n)
-Space Complexity: O(n)
+//Dynamic Programming
+//This Works Too
+//Time Complexity: O(n)
+//Space Complexity: O(n)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -109,10 +109,10 @@ public:
 };
 
 
-Kadane’s Algorithm
-This Will Works Too
-Time Complexity: O(n)
-Space Complexity: O(1)
+//Kadane’s Algorithm
+//This Will Works Too
+//Time Complexity: O(n)
+//Space Complexity: O(1)
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -129,10 +129,10 @@ public:
 };
 
 
-Segment Tree
-This Works too
-Time Complexity: O(n) build + O(1) query for maxSubArray
-Space Complexity: O(n) for segment tree
+//Segment Tree
+//This Works too
+//Time Complexity: O(n) build + O(1) query for maxSubArray
+//Space Complexity: O(n) for segment tree
 #include <bits/stdc++.h>
 using namespace std;
 
