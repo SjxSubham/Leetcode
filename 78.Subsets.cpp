@@ -1,8 +1,10 @@
-//Backtracking (DFS)
-//This Works
-//Build subsets by choosing/not choosing each element
-//Time Complexity: O(n * 2^n)
-//Space Complexity: O(n) recursion stack (excluding output)
+// Subsets using Backtracking (DFS)
+// -------------------------------
+// Intuition: Each element can be either taken or not taken → 2^n subsets
+// Approach: Use DFS recursion with backtracking to explore both choices
+// Time Complexity: O(n * 2^n)
+// Space Complexity: O(n) recursion stack (excluding output)
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -13,18 +15,20 @@ public:
             ans.push_back(path); 
             return; 
         }
-        // not take
+        // Choice 1: not take nums[idx]
         dfs(idx + 1, nums, path, ans);
-        // take
+
+        // Choice 2: take nums[idx]
         path.push_back(nums[idx]);
         dfs(idx + 1, nums, path, ans);
-        path.pop_back();
+
+        path.pop_back(); // backtrack (undo choice)
     }
 
     vector<vector<int>> subsets(vector<int>& nums) {
-        vector<vector<int>> ans;
-        vector<int> path;
-        dfs(0, nums, path, ans);
+        vector<vector<int>> ans;  
+        vector<int> path;        
+        dfs(0, nums, path, ans);  
         return ans;
     }
 };
