@@ -1,0 +1,40 @@
+// Approach
+
+// We use hash sets (or boolean arrays) to track seen numbers:
+// For each cell (i, j), if it contains a number x, we check:
+// If x is already seen in row i.
+// If x is already seen in column j.
+// If x is already seen in its 3×3 sub-box indexed by (i/3, j/3).
+// If any duplicate is found, return false.
+// Otherwise, the board is valid.
+
+// Intuition
+
+// The Sudoku grid is only 9×9, so we can directly check all constraints efficiently.
+// We leverage the mathematical mapping of sub-box index as boxIndex = (i / 3) * 3 + (j / 3).
+
+// Complexity
+
+// Time Complexity: O(81) → O(1) Constant time.
+// Space Complexity: O(81) → O(1) Constant space.
+
+/* code 
+        vector<unordered_set<char>> rows(9), cols(9), boxes(9);
+
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                char c = board[i][j];
+                if (c == '.') continue;
+
+                int boxIndex = (i / 3) * 3 + (j / 3);
+
+                if (rows[i].count(c) || cols[j].count(c) || boxes[boxIndex].count(c))
+                    return false;
+
+                rows[i].insert(c);
+                cols[j].insert(c);
+                boxes[boxIndex].insert(c);
+            }
+        }
+        return true;
+*/
