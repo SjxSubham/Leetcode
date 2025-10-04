@@ -1,37 +1,3 @@
-/*
-207. Course Schedule
-Medium
-
-There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. 
-You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that 
-you must take course bi first if you want to take course ai.
-
-For example:
-- [0, 1] means: to take course 0 you must finish course 1 first.
-
-Return true if you can finish all courses. Otherwise, return false.
-
-
----------------- Example 1 ----------------
-Input: numCourses = 2, prerequisites = [[1,0]]
-Output: true
-Explanation: To take course 1 you must finish course 0 → possible.
-
----------------- Example 2 ----------------
-Input: numCourses = 2, prerequisites = [[1,0],[0,1]]
-Output: false
-Explanation: Cycle exists (0 requires 1 and 1 requires 0) → impossible.
-
-
-Constraints:
-1 <= numCourses <= 2000
-0 <= prerequisites.length <= 5000
-prerequisites[i].length == 2
-0 <= ai, bi < numCourses
-All pairs prerequisites[i] are unique.
-*/
-
-
 // ---------------- Approach ----------------
 //
 // This is a **cycle detection in a directed graph** problem.
