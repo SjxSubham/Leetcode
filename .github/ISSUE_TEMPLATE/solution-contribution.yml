@@ -1,5 +1,5 @@
 name: "Solution Contribution (C++)"
-description: "Submit a C++ solution for a LeetCode problem."
+description: "Submit a C++ solution for a LeetCode problem which already not exists in the repo."
 title: "[Solution]: <Problem Number>. <Problem Title>"
 body:
   - type: markdown
@@ -87,5 +87,3 @@ body:
       required: true
 
 
-**PR File Naming Convention:** Please ensure your file follows the format: `[Number]. [Problem Title].cpp`  
-**Example:** `2785. Sort Vowels in a String.cpp`
