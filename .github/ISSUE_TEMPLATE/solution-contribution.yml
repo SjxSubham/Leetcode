@@ -1,29 +1,90 @@
-## Contribution Checklist
+name: "Solution Contribution (C++)"
+description: "Submit a C++ solution for a LeetCode problem."
+title: "[Solution]: <Problem Number>. <Problem Title>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing a solution! Please fill out the details below.
 
-- [ ] Approach
-- [ ] Intuition
-- [ ] Solution in Code
-- [ ] Raise a PR, make sure file name format should be according to the others file in this repo .cpp
+        PR File Naming Convention:
+        - Your solution file must be named exactly as: `[Number]. [Problem Title].cpp`
+        - Example: `2785. Sort Vowels in a String.cpp`
 
----
+  - type: input
+    id: problem_number
+    attributes:
+      label: Problem Number
+      description: Enter the LeetCode problem number.
+      placeholder: "2785"
+    validations:
+      required: true
 
-### Approach
-<!-- Describe the approach you used to solve this problem -->
+  - type: input
+    id: problem_title
+    attributes:
+      label: Problem Title
+      description: Enter the exact LeetCode problem title.
+      placeholder: "Sort Vowels in a String"
+    validations:
+      required: true
 
+  - type: input
+    id: leetcode_link
+    attributes:
+      label: LeetCode Link
+      description: Provide the link to the problem on LeetCode.
+      placeholder: "https://leetcode.com/problems/sort-vowels-in-a-string/"
+    validations:
+      required: true
 
-### Intuition
-<!-- Explain the intuition behind your solution -->
+  - type: checkboxes
+    id: contribution_checklist
+    attributes:
+      label: Contribution Checklist
+      options:
+        - label: I have written the Approach section.
+          required: true
+        - label: I have written the Intuition section.
+          required: true
+        - label: I have included a working C++ solution.
+          required: true
+        - label: I will raise a PR and ensure the filename follows the convention `[Number]. [Problem Title].cpp`.
+          required: true
 
+  - type: textarea
+    id: approach
+    attributes:
+      label: Approach
+      description: Describe the algorithm, data structures used, and time/space complexity.
+      placeholder: "Explain step-by-step how your solution works and its complexity."
+    validations:
+      required: true
 
-### Solution in Code
-<!-- Paste your C++ solution code here -->
-```cpp
-class Solution {
-public:
-    // Your solution code here
-};
-```
+  - type: textarea
+    id: intuition
+    attributes:
+      label: Intuition
+      description: Explain the core idea behind your approach.
+      placeholder: "Why does this approach work? What insights led you to it?"
+    validations:
+      required: true
 
+  - type: textarea
+    id: code
+    attributes:
+      label: Solution in C++
+      description: Paste your C++ solution code. Ensure it compiles and passes sample tests.
+      render: cpp
+      placeholder: |
+        ```cpp
+        class Solution {
+        public:
+            // Your solution code here
+        };
+        ```
+    validations:
+      required: true
 
 
 **PR File Naming Convention:** Please ensure your file follows the format: `[Number]. [Problem Title].cpp`  
