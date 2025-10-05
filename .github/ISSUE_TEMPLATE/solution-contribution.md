@@ -1,17 +1,3 @@
----
-name: LeetCode Problem Solution
-about: Use this template to contribute a LeetCode problem solution
-title: '[Problem Number]. [Problem Title]'
-labels: 'leetcode-solution'
-assignees: ''
-
----
-
-## Problem Information
-**Problem Number:** 
-**Problem Title:** 
-**Problem Link:** https://leetcode.com/problems/[problem-name]/
-
 ## Contribution Checklist
 
 - [ ] Approach
@@ -38,11 +24,7 @@ public:
 };
 ```
 
-### Additional Notes
-<!-- Add any additional context, time/space complexity analysis, or alternative approaches -->
 
 
----
-
-**File Naming Convention:** Please ensure your file follows the format: `[Number]. [Problem Title].cpp`  
+**PR File Naming Convention:** Please ensure your file follows the format: `[Number]. [Problem Title].cpp`  
 **Example:** `2785. Sort Vowels in a String.cpp`
