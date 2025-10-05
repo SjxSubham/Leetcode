@@ -1,0 +1,76 @@
+name: LeetCode Solution Contribution
+description: Submit a new LeetCode problem solution
+title: "[Problem Number]. [Problem Title]"
+labels: ["leetcode-solution"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing to our LeetCode solutions repository! Please fill out the following information about your solution.
+        
+  - type: input
+    id: problem-number
+    attributes:
+      label: Problem Number
+      description: The LeetCode problem number
+      placeholder: e.g., 2785
+    validations:
+      required: true
+      
+  - type: input
+    id: problem-title
+    attributes:
+      label: Problem Title
+      description: The full title of the LeetCode problem
+      placeholder: e.g., Sort Vowels in a String
+    validations:
+      required: true
+      
+  - type: textarea
+    id: approach
+    attributes:
+      label: Approach
+      description: Describe the approach you used to solve this problem
+      placeholder: Explain your approach in detail...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: intuition
+    attributes:
+      label: Intuition
+      description: Explain the intuition behind your solution
+      placeholder: Share your thought process and intuition...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution in Code
+      description: Paste your C++ solution code here
+      placeholder: |
+        ```cpp
+        class Solution {
+        public:
+            // Your solution code here
+        };
+        ```
+      render: cpp
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: pr-checklist
+    attributes:
+      label: PR Checklist
+      description: Please ensure you follow these guidelines before raising a PR
+      options:
+        - label: I will raise a PR with the solution
+          required: true
+        - label: The file name format follows the repository convention (e.g., "2785. Sort Vowels in a String.cpp")
+          required: true
+        - label: The code is properly formatted and follows C++ best practices
+          required: false
+        - label: I have included comments explaining complex logic (if applicable)
+          required: false
