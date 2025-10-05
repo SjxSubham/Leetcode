@@ -1,6 +1,6 @@
 name: "Solution Contribution (C++)"
 description: "Submit a C++ solution for a LeetCode problem which already not exists in the repo."
-title: "[Solution]: <Problem Number>. <Problem Title>"
+title: "[Problem Number]: <Problem Title>"
 body:
   - type: markdown
     attributes:
