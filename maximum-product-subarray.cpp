@@ -1,3 +1,6 @@
+// 152. Maximum Product Subarray
+// By Traversing in Both Directions 
+// Time Complexity - O(n) and Space Complexity - O(1) 
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
