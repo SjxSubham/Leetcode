@@ -1,19 +1,18 @@
 ###  Intuition
 <!-- Explain your thought process and initial approach to the problem -->
-<!-- What was your first idea when you saw this problem? -->
+
 
 
 
 ### Approach
 <!-- Describe your solution approach in detail -->
-<!-- Break down the steps of your algorithm -->
+
 
 
 ## Code Solution (C++)
 
 ```cpp
-// Paste your C++ solution here 
-    // Your code here
+    // Your code goes here
     
 
 ```
