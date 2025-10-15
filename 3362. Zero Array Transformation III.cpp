@@ -9,8 +9,6 @@
 
 // Consider `nums[0]`. To make `nums[0]` zero, we must apply an operation at index `0` with `x = nums[0]`. This will also affect `nums[1]`. After this operation, `nums[0]` becomes zero. We then move to `nums[1]` (which has been modified) and repeat the process.
 
-// Let `dp[i]` be the minimum operations to make `nums[0...i]` zero. This seems complicated because an operation at `i` affects `i+1`.
-
 // Let's try a direct greedy approach. Iterate from `i = 0` to `n-1`.
 // For each `nums[i]`, if `nums[i]` is not zero, we must perform an operation at index `i` to make it zero. The value of `x` for this operation must be `nums[i]` itself. This operation will also subtract `nums[i]` from `nums[i+1]` (if `i+1 < n`).
 // We add `nums[i]` to our total operations count.
@@ -44,6 +42,10 @@ public:
                 total_operations += nums[i];
                 if (i + 1 < n) {
                     nums[i+1] -= nums[i];
+                    // Ensure nums[i+1] does not become negative
+                    if (nums[i+1] < 0) {
+                        nums[i+1] = 0;
+                    }
                 }
                 nums[i] = 0; // nums[i] is now zero
             }
