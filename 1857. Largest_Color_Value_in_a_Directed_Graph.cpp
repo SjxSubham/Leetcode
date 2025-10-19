@@ -38,13 +38,13 @@ public:
                 q.push(i);
 
         vector<vector<int>> count(n,vector<int>(26, 0)); 
-        int visited=0;
+        int vis=0;
         int ans=0;
 
         while (!q.empty()) {
             int u=q.front();
             q.pop();
-            visited++;
+            vis++;
 
 
             int colorIdx=colors[u]-'a';
@@ -59,6 +59,6 @@ public:
             }
         }
 
-        return (visited==n)?ans:-1;
+        return (vis==n)?ans:-1;
     }
 };
