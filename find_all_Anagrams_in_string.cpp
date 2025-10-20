@@ -10,9 +10,17 @@ public:
         
         int m = s.length();
         int n = p.length();
-        
+
+        if (n == 0) {
+            // For empty pattern, return all possible indices (including s.length())
+            vector<int> result;
+            for (int i = 0; i <= m; ++i) {
+                result.push_back(i);
+            }
+            return result;
+        }
         if (n > m) return {};
-        
+
         for (char &ch : p)
             arr[ch - 'a']++;
         
