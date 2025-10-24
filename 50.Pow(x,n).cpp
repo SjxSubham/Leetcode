@@ -35,7 +35,7 @@ public:
                 result *= x;
             }
             x *= x;             // Square x
-            N /= 2;             // Divide n by 2
+            N /= 2;        
         }
 
         return result;
