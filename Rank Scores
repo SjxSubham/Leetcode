@@ -1,0 +1,19 @@
+import pandas as pd
+
+def order_scores(scores: pd.DataFrame) -> pd.DataFrame:
+    occr_dict = Counter(scores["score"])
+    
+    intr_arr = []
+    for key, freq in occr_dict.items():
+        intr_arr.append([key, freq])
+    
+    intr_arr.sort(reverse = True)
+
+    ans = []
+
+    for i, e in enumerate(intr_arr):
+
+        for j in range(e[1]):
+            ans.append([e[0], i + 1])
+    
+    return pd.DataFrame(ans, columns=["score", "rank"])
